@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 2b1cdbcd1071d814c80e99d0130051dc
+timeCreated: 1521488433
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Bad Handwriting 7.2
+  fontNames:
+  - Bad Handwriting 7.2
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
