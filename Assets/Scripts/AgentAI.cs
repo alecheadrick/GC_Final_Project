@@ -58,6 +58,8 @@ public class AgentAI : MonoBehaviour {
 					if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f) {
 
 						//Black out Player Screen and Send Player Back to Cell
+						playerTransform.position = new Vector3(16, 1, -10);
+						playerInCell = true;
 
 						agentState = AiMode.Returning;
 					}
