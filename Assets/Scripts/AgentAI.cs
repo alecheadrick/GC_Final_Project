@@ -9,18 +9,27 @@ public class AgentAI : MonoBehaviour {
 	private Transform playerTransform;
 	private Transform cellDoorTransform;
 	private Transform stairsTransform;
+	private Transform storageTransform;
+	private Transform bathroomTransform;
+	private Transform recRoomTransform;
+	private Transform medRoomTransform;
 	private GameObject playerObject;
 
-	public enum AiMode {Walking, Searching, WaitingToReturn, Returning, WaitingToWalk};
+	public enum AiMode {Walking, Searching, WaitingToReturn, Returning, WaitingToWalk, SearchingStorage, SearchingBathroom, SearchingRecRoom, SearchingMedRoom};
 	public AiMode agentState = AiMode.Walking;
 
 	public float returnWaitTime = 5f;
 	public float walkWaitTime = 60f;
+	public float searchWaitTime = 20f;
 
 	private float lastWalkTime;
 	private float lastReturnTime;
 
 	private bool playerInCell;
+	private bool playerInStorageRoom;
+	private bool playerInMedRoom;
+	private bool playerInRecRoom;
+	private bool playerInBathroom;
 
 	// Use this for initialization
 	void Start () {
@@ -29,13 +38,30 @@ public class AgentAI : MonoBehaviour {
 		playerTransform = playerObject.GetComponent<Transform>();
 		agent = GetComponent<NavMeshAgent>();
 
+		GameObject stairs = GameObject.FindGameObjectWithTag ("Stairwell");
+		stairsTransform = stairs.GetComponent<Transform> ();
+
 		GameObject cellDoor = GameObject.FindGameObjectWithTag ("CellDoor");
 		cellDoorTransform = cellDoor.GetComponent<Transform> ();
 
-		GameObject stairWell = GameObject.FindGameObjectWithTag ("Stairwell");
-		stairsTransform = stairWell.GetComponent<Transform> ();
+		GameObject storage = GameObject.FindGameObjectWithTag ("Storage");
+		storageTransform = storage.GetComponent<Transform> ();
+
+		GameObject bathroom = GameObject.FindGameObjectWithTag ("Bathroom");
+		bathroomTransform = bathroom.GetComponent<Transform> ();
+
+		GameObject recRoom = GameObject.FindGameObjectWithTag ("RecRoom");
+		recRoomTransform = recRoom.GetComponent<Transform> ();
+
+		GameObject medRoom = GameObject.FindGameObjectWithTag ("MedRoom");
+		medRoomTransform = medRoom.GetComponent<Transform> ();
 
 		playerInCell = playerObject.GetComponent<Player> ().playerInCell;
+		playerInStorageRoom = playerObject.GetComponent<Player> ().playerInStorageRoom;
+		playerInMedRoom = playerObject.GetComponent<Player> ().playerInMedRoom;
+		playerInRecRoom = playerObject.GetComponent<Player> ().playerInRecRoom;
+		playerInBathroom = playerObject.GetComponent<Player> ().playerInBathroom;
+
 	}
 
 	// Update is called once per frame
@@ -51,9 +77,11 @@ public class AgentAI : MonoBehaviour {
 			//Check if remaining distance is less than stopping distance
 			//Send Player back to cell
 			//Set Mode to returning
+
 			agent.SetDestination (playerTransform.position);
 
 			if (!agent.pathPending) {
+				
 				if (agent.remainingDistance <= agent.stoppingDistance) {
 					if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f) {
 
@@ -62,10 +90,10 @@ public class AgentAI : MonoBehaviour {
 						playerInCell = true;
 
 						agentState = AiMode.Returning;
+	
 					}
 				}
 			}
-
 
 		} else if (agentState == AiMode.Walking) {
 			//Play Walking Noise (Combine with Animation)
@@ -85,7 +113,7 @@ public class AgentAI : MonoBehaviour {
 						if (playerInCell) {
 							agentState = AiMode.WaitingToReturn;
 						} else {
-							agentState = AiMode.Searching;
+							agentState = AiMode.SearchingStorage;
 						}
 					}
 				}
@@ -127,7 +155,89 @@ public class AgentAI : MonoBehaviour {
 
 			return;
 
-		}else {
+		} else if (agentState == AiMode.SearchingStorage) {
+
+			agent.SetDestination (storageTransform.position);
+
+			if (!agent.pathPending) {
+				if (agent.remainingDistance <= agent.stoppingDistance) {
+					if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f) {
+
+						if (Time.time > lastWalkTime + searchWaitTime) {
+							playerInStorageRoom = playerObject.GetComponent<Player> ().playerInStorageRoom;
+
+							if (playerInStorageRoom) {
+								agentState = AiMode.Searching;
+							} else {
+								agentState = AiMode.SearchingMedRoom;
+							}
+
+						}
+					}
+				}
+			}
+
+		} else if (agentState == AiMode.SearchingMedRoom) {
+			agent.SetDestination (medRoomTransform.position);
+
+			if (!agent.pathPending) {
+				if (agent.remainingDistance <= agent.stoppingDistance) {
+					if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f) {
+
+						if (Time.time > lastWalkTime + searchWaitTime) {
+							playerInMedRoom = playerObject.GetComponent<Player> ().playerInMedRoom;
+
+							if (playerInMedRoom) {
+								agentState = AiMode.Searching;
+							} else {
+								agentState = AiMode.SearchingRecRoom;
+							}
+
+						}
+					}
+				}
+			}
+		} else if(agentState == AiMode.SearchingRecRoom) {
+			agent.SetDestination (recRoomTransform.position);
+
+			if (!agent.pathPending) {
+				if (agent.remainingDistance <= agent.stoppingDistance) {
+					if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f) {
+
+						if (Time.time > lastWalkTime + searchWaitTime) {
+							playerInRecRoom = playerObject.GetComponent<Player> ().playerInRecRoom;
+
+							if (playerInRecRoom) {
+								agentState = AiMode.Searching;
+							} else {
+								agentState = AiMode.SearchingBathroom;
+							}
+
+						}
+					}
+				}
+			}
+		} else if (agentState == AiMode.SearchingBathroom) {
+			agent.SetDestination (bathroomTransform.position);
+
+			if (!agent.pathPending) {
+				if (agent.remainingDistance <= agent.stoppingDistance) {
+					if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f) {
+
+						if (Time.time > lastWalkTime + searchWaitTime) {
+							playerInBathroom = playerObject.GetComponent<Player> ().playerInBathroom;
+
+							if (playerInBathroom) {
+								agentState = AiMode.Searching;
+							} else {
+								agentState = AiMode.Returning;
+							}
+
+						}
+					}
+				}
+			}
+		} else {
 			return;
 		}
 	}

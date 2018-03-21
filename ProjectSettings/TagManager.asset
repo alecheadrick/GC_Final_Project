@@ -6,6 +6,11 @@ TagManager:
   tags:
   - CellDoor
   - Stairwell
+  - Enemy
+  - Storage
+  - Bathroom
+  - RecRoom
+  - MedRoom
   layers:
   - Default
   - TransparentFX
