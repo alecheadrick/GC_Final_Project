@@ -39,7 +39,7 @@ public class AgentAI : MonoBehaviour {
 	}
 
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 
 		Debug.Log ("Current State: " + agentState);
 		Debug.Log ("Path Status: " + agent.pathStatus);
@@ -56,6 +56,11 @@ public class AgentAI : MonoBehaviour {
 			if (!agent.pathPending) {
 				if (agent.remainingDistance <= agent.stoppingDistance) {
 					if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f) {
+
+						//Black out Player Screen and Send Player Back to Cell
+						playerTransform.position = new Vector3(16, 1, -10);
+						playerInCell = true;
+
 						agentState = AiMode.Returning;
 					}
 				}
@@ -63,6 +68,8 @@ public class AgentAI : MonoBehaviour {
 
 
 		} else if (agentState == AiMode.Walking) {
+			//Play Walking Noise (Combine with Animation)
+
 			//Check if path is pending
 			//Check if remaining distance is less than stopping distance
 			//Check if player is in cell ? WaitingToReturn : Searching
@@ -103,6 +110,7 @@ public class AgentAI : MonoBehaviour {
 
 			//Wait to start walking again.
 			if (Time.time > lastWalkTime + walkWaitTime) {
+				//Play RETURN TO CELL NOISE
 				agentState = AiMode.Walking;
 				lastWalkTime = Time.time;
 			}
