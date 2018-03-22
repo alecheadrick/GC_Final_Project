@@ -21410,6 +21410,7 @@ GameObject:
   - component: {fileID: 884776164}
   - component: {fileID: 884776163}
   - component: {fileID: 884776162}
+  - component: {fileID: 884776165}
   m_Layer: 0
   m_Name: Safe_Door
   m_TagString: Untagged
@@ -21487,6 +21488,38 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 884776160}
   m_Mesh: {fileID: 4300002, guid: 92e2ea25c874a6e4cb0a5505af819d35, type: 3}
+--- !u!114 &884776165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 884776160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2537ae21b6fac8a4b9ce963ed97b2894, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableWhenIdle: 0
+  touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
+  allowedTouchControllers: 0
+  ignoredColliders: []
+  isGrabbable: 0
+  holdButtonToGrab: 1
+  stayGrabbedOnTeleport: 1
+  validDrop: 1
+  grabOverrideButton: 0
+  allowedGrabControllers: 0
+  grabAttachMechanicScript: {fileID: 0}
+  secondaryGrabActionScript: {fileID: 0}
+  isUsable: 1
+  holdButtonToUse: 1
+  useOnlyIfGrabbed: 0
+  pointerActivatesUseAction: 0
+  useOverrideButton: 0
+  allowedUseControllers: 0
+  usingState: 0
+  flipped: 0
+  rotated: 0
 --- !u!1 &888413242
 GameObject:
   m_ObjectHideFlags: 0
@@ -45654,6 +45687,22 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5b0a4afc40c806c4f9835e6afff484bf, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1874858060 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1686309876016752, guid: 5b0a4afc40c806c4f9835e6afff484bf,
+    type: 2}
+  m_PrefabInternal: {fileID: 1874858059}
+--- !u!114 &1874858061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1874858060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5dcf7c4e2a33bf4db20ec9d8ccfec36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1876057371
 GameObject:
   m_ObjectHideFlags: 0
