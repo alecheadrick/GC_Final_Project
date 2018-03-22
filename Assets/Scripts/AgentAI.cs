@@ -65,7 +65,8 @@ public class AgentAI : MonoBehaviour {
 	}
 
 	// Update is called once per frame
-	void FixedUpdate () {
+	void Update () {
+
 
 		Debug.Log ("Current State: " + agentState);
 		Debug.Log ("Path Status: " + agent.pathStatus);
@@ -111,6 +112,7 @@ public class AgentAI : MonoBehaviour {
 						playerInCell = playerObject.GetComponent<Player> ().playerInCell;
 
 						if (playerInCell) {
+							lastWalkTime = Time.time;
 							agentState = AiMode.WaitingToReturn;
 						} else {
 							agentState = AiMode.SearchingStorage;
@@ -129,6 +131,7 @@ public class AgentAI : MonoBehaviour {
 			if (!agent.pathPending) {
 				if (agent.remainingDistance <= agent.stoppingDistance) {
 					if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f) {
+						lastWalkTime = Time.time;
 						agentState = AiMode.WaitingToWalk;
 					}
 				}
@@ -148,7 +151,7 @@ public class AgentAI : MonoBehaviour {
 		} else if (agentState == AiMode.WaitingToReturn) {
 
 			//Wait to return from cell.
-			if (Time.time > lastReturnTime + returnWaitTime) {
+			if (Time.time > lastWalkTime + returnWaitTime) {
 				agentState = AiMode.Returning;
 				lastReturnTime = Time.time;
 			}
@@ -172,6 +175,7 @@ public class AgentAI : MonoBehaviour {
 								agentState = AiMode.SearchingMedRoom;
 							}
 
+							lastWalkTime = Time.time;
 						}
 					}
 				}
@@ -193,6 +197,7 @@ public class AgentAI : MonoBehaviour {
 								agentState = AiMode.SearchingRecRoom;
 							}
 
+							lastWalkTime = Time.time;
 						}
 					}
 				}
@@ -213,6 +218,7 @@ public class AgentAI : MonoBehaviour {
 								agentState = AiMode.SearchingBathroom;
 							}
 
+							lastWalkTime = Time.time;
 						}
 					}
 				}
@@ -233,6 +239,7 @@ public class AgentAI : MonoBehaviour {
 								agentState = AiMode.Returning;
 							}
 
+							lastWalkTime = Time.time;
 						}
 					}
 				}
