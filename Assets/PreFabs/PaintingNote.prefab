@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23645791855353454}
   - component: {fileID: 114717168248833362}
   m_Layer: 0
-  m_Name: Patients_Note_Picture
+  m_Name: PaintingNote
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
