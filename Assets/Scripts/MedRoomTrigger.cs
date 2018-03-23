@@ -6,7 +6,7 @@ public class MedRoomTrigger : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other) {
 
-		if (other.tag == "Player") {
+		if (other.tag == "PlayerTarget") {
 			other.GetComponent<Player> ().playerInMedRoom = !other.GetComponent<Player> ().playerInMedRoom;
 		}
 

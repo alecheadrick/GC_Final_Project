@@ -11,6 +11,8 @@ TagManager:
   - Bathroom
   - RecRoom
   - MedRoom
+  - CellRoom
+  - PlayerTarget
   layers:
   - Default
   - TransparentFX

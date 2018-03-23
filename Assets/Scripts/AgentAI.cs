@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class AgentAI : MonoBehaviour {
 
+	//Get tranforms for positions AI navigates to
 	private NavMeshAgent agent;
 	private Transform playerTransform;
 	private Transform cellDoorTransform;
@@ -15,28 +16,40 @@ public class AgentAI : MonoBehaviour {
 	private Transform medRoomTransform;
 	private GameObject playerObject;
 
+	//Differents states the AI can be in
 	public enum AiMode {Walking, Searching, WaitingToReturn, Returning, WaitingToWalk, SearchingStorage, SearchingBathroom, SearchingRecRoom, SearchingMedRoom};
-	public AiMode agentState = AiMode.Walking;
+	public AiMode agentState;
 
+	//Wait time values
 	public float returnWaitTime = 5f;
 	public float walkWaitTime = 60f;
 	public float searchWaitTime = 20f;
 
+	//References for Time
 	private float lastWalkTime;
 	private float lastReturnTime;
 
+	//Bools to indicate if player is in specific room
 	private bool playerInCell;
 	private bool playerInStorageRoom;
 	private bool playerInMedRoom;
 	private bool playerInRecRoom;
 	private bool playerInBathroom;
 
+	//Bool to Wait for SteamVR to load and search for player once
+	private bool vrCheck = true;
+
 	// Use this for initialization
+	//FInd agent
+	//Find all of our position transforms
+
 	void Start () {
 		
-		playerObject = GameObject.FindGameObjectWithTag ("Player");
-		playerTransform = playerObject.GetComponent<Transform>();
 		agent = GetComponent<NavMeshAgent>();
+
+		//playerObject = GameObject.FindGameObjectWithTag ("PlayerTarget");
+		//playerTransform = playerObject.GetComponent<Transform>();
+		//agent = GetComponent<NavMeshAgent>();
 
 		GameObject stairs = GameObject.FindGameObjectWithTag ("Stairwell");
 		stairsTransform = stairs.GetComponent<Transform> ();
@@ -56,29 +69,35 @@ public class AgentAI : MonoBehaviour {
 		GameObject medRoom = GameObject.FindGameObjectWithTag ("MedRoom");
 		medRoomTransform = medRoom.GetComponent<Transform> ();
 
-		playerInCell = playerObject.GetComponent<Player> ().playerInCell;
-		playerInStorageRoom = playerObject.GetComponent<Player> ().playerInStorageRoom;
-		playerInMedRoom = playerObject.GetComponent<Player> ().playerInMedRoom;
-		playerInRecRoom = playerObject.GetComponent<Player> ().playerInRecRoom;
-		playerInBathroom = playerObject.GetComponent<Player> ().playerInBathroom;
+		agentState = AiMode.Walking;
+	}
 
+	//Find the player, after SteamVR has loaded
+	void LateUpdate(){
+		if (vrCheck) {
+			playerObject = GameObject.FindGameObjectWithTag ("PlayerTarget");
+			//playerTransform = playerObject.GetComponent<Transform>();
+			//playerInCell = playerObject.GetComponent<Player> ().playerInCell;
+			vrCheck = false;
+		}
 	}
 
 	// Update is called once per frame
+
 	void Update () {
+		//Checking the state, and performing certain tasks like Searching, Walking or Moving
 
-
-		Debug.Log ("Current State: " + agentState);
-		Debug.Log ("Path Status: " + agent.pathStatus);
-		Debug.Log ("Remaining Distance " + agent.remainingDistance);
-		Debug.Log ("Stopping Distance" + agent.stoppingDistance);
+		//Debug.Log ("Current State: " + agentState);
+		//Debug.Log ("Path Status: " + agent.pathStatus);
+		//Debug.Log ("Remaining Distance " + agent.remainingDistance);
+		//Debug.Log ("Stopping Distance" + agent.stoppingDistance);
 
 		if (agentState == AiMode.Searching) {
 			//Check if path is pending
 			//Check if remaining distance is less than stopping distance
 			//Send Player back to cell
 			//Set Mode to returning
-
+			playerTransform = playerObject.GetComponent<Transform>();
 			agent.SetDestination (playerTransform.position);
 
 			if (!agent.pathPending) {
@@ -86,8 +105,8 @@ public class AgentAI : MonoBehaviour {
 				if (agent.remainingDistance <= agent.stoppingDistance) {
 					if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f) {
 
-						//Black out Player Screen and Send Player Back to Cell
-						playerTransform.position = new Vector3(16, 1, -10);
+						//Black out Player Screen and Reset SteamVR transform
+						playerTransform.parent.transform.position = new Vector3(16f, 0.5f, -10f);
 						playerInCell = true;
 
 						agentState = AiMode.Returning;
@@ -237,6 +256,7 @@ public class AgentAI : MonoBehaviour {
 								agentState = AiMode.Searching;
 							} else {
 								agentState = AiMode.Returning;
+								//Adjust Walk Wait Time to Speed up Enemy's searching
 							}
 
 							lastWalkTime = Time.time;

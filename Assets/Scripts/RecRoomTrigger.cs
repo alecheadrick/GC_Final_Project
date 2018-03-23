@@ -6,7 +6,7 @@ public class RecRoomTrigger : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other) {
 
-		if (other.tag == "Player") {
+		if (other.tag == "PlayerTarget") {
 			other.GetComponent<Player> ().playerInRecRoom = !other.GetComponent<Player> ().playerInRecRoom;
 		}
 

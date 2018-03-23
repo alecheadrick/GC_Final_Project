@@ -6,7 +6,7 @@ public class StorageRoomTrigger : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other) {
 
-		if (other.tag == "Player") {
+		if (other.tag == "PlayerTarget") {
 			other.GetComponent<Player> ().playerInStorageRoom = !other.GetComponent<Player> ().playerInStorageRoom;
 		}
 

@@ -10,15 +10,4 @@ public class Player : MonoBehaviour {
 	public bool playerInRecRoom = false;
 	public bool playerInBathroom = false;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-
 }
