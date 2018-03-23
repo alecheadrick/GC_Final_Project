@@ -1,28 +1,26 @@
 fileFormatVersion: 2
-guid: 969e61af7d657b847be308034855cb97
-timeCreated: 1521761905
+guid: 2e4abc62899a83945a568e9f28758b99
+timeCreated: 1521824364
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Safe
-    100002: Safe.001
-    100004: Safe_Door
-    100006: //RootNode
-    400000: Safe
-    400002: Safe.001
-    400004: Safe_Door
-    400006: //RootNode
-    2100000: 19 - Default.001
-    2300000: Safe
-    2300002: Safe.001
-    2300004: Safe_Door
-    3300000: Safe
-    3300002: Safe.001
-    3300004: Safe_Door
-    4300000: Safe.001
-    4300002: Safe_Door
-    4300004: Safe
+    100000: Safe_Door.001
+    100002: Safe_Door.002
+    100004: //RootNode
+    400000: Safe_Door.001
+    400002: Safe_Door.002
+    400004: //RootNode
+    2100000: 19 - Default
+    2300000: Safe_Door.001
+    2300002: Safe_Door.002
+    2300004: //RootNode
+    3300000: Safe_Door.001
+    3300002: Safe_Door.002
+    3300004: //RootNode
+    4300000: Safe
+    4300002: Safe_Door.002
+    4300004: Safe_Door.001
   externalObjects: {}
   materials:
     importMaterials: 0
