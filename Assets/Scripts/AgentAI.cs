@@ -14,7 +14,7 @@ public class AgentAI : MonoBehaviour {
 	private Transform bathroomTransform;
 	private Transform recRoomTransform;
 	private Transform medRoomTransform;
-	private GameObject playerObject;
+	public GameObject playerObject;
 
 	//Differents states the AI can be in
 	public enum AiMode {Walking, Searching, WaitingToReturn, Returning, WaitingToWalk, SearchingStorage, SearchingBathroom, SearchingRecRoom, SearchingMedRoom};
@@ -27,7 +27,6 @@ public class AgentAI : MonoBehaviour {
 
 	//References for Time
 	private float lastWalkTime;
-	private float lastReturnTime;
 
 	//Bools to indicate if player is in specific room
 	private bool playerInCell;
@@ -37,7 +36,10 @@ public class AgentAI : MonoBehaviour {
 	private bool playerInBathroom;
 
 	//Bool to Wait for SteamVR to load and search for player once
-	private bool vrCheck = true;
+	//private bool vrCheck = true;
+
+	//Animator
+	private Animator animator;
 
 	// Use this for initialization
 	//FInd agent
@@ -47,9 +49,7 @@ public class AgentAI : MonoBehaviour {
 		
 		agent = GetComponent<NavMeshAgent>();
 
-		//playerObject = GameObject.FindGameObjectWithTag ("PlayerTarget");
-		//playerTransform = playerObject.GetComponent<Transform>();
-		//agent = GetComponent<NavMeshAgent>();
+		animator = GetComponent<Animator> ();
 
 		GameObject stairs = GameObject.FindGameObjectWithTag ("Stairwell");
 		stairsTransform = stairs.GetComponent<Transform> ();
@@ -72,16 +72,6 @@ public class AgentAI : MonoBehaviour {
 		agentState = AiMode.Walking;
 	}
 
-	//Find the player, after SteamVR has loaded
-	void LateUpdate(){
-		if (vrCheck) {
-			playerObject = GameObject.FindGameObjectWithTag ("PlayerTarget");
-			//playerTransform = playerObject.GetComponent<Transform>();
-			//playerInCell = playerObject.GetComponent<Player> ().playerInCell;
-			vrCheck = false;
-		}
-	}
-
 	// Update is called once per frame
 
 	void Update () {
@@ -98,6 +88,8 @@ public class AgentAI : MonoBehaviour {
 			//Send Player back to cell
 			//Set Mode to returning
 			playerTransform = playerObject.GetComponent<Transform>();
+			animator.SetBool ("Idle", false);
+			animator.SetBool ("Walk", true);
 			agent.SetDestination (playerTransform.position);
 
 			if (!agent.pathPending) {
@@ -121,19 +113,25 @@ public class AgentAI : MonoBehaviour {
 			//Check if path is pending
 			//Check if remaining distance is less than stopping distance
 			//Check if player is in cell ? WaitingToReturn : Searching
-
+			animator.SetBool ("Idle", false);
+			animator.SetBool ("Walk", true);
 			agent.SetDestination (cellDoorTransform.position);
 
 			if (!agent.pathPending) {
 				if (agent.remainingDistance <= agent.stoppingDistance) {
 					if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f) {
-						
+
 						playerInCell = playerObject.GetComponent<Player> ().playerInCell;
 
 						if (playerInCell) {
+							animator.SetBool ("Idle", true);
+							animator.SetBool ("Walk", false);
 							lastWalkTime = Time.time;
 							agentState = AiMode.WaitingToReturn;
 						} else {
+							animator.SetBool ("Idle", false);
+							animator.SetBool ("Walk", true);
+							lastWalkTime = Time.time;
 							agentState = AiMode.SearchingStorage;
 						}
 					}
@@ -144,7 +142,8 @@ public class AgentAI : MonoBehaviour {
 			//Check if path is pending
 			//Check if remaining distance is less than stopping distance
 			//Set Mode to WaitingToWalk
-
+			animator.SetBool ("Idle", false);
+			animator.SetBool ("Walk", true);
 			agent.SetDestination (stairsTransform.position);
 
 			if (!agent.pathPending) {
@@ -172,25 +171,31 @@ public class AgentAI : MonoBehaviour {
 			//Wait to return from cell.
 			if (Time.time > lastWalkTime + returnWaitTime) {
 				agentState = AiMode.Returning;
-				lastReturnTime = Time.time;
+				lastWalkTime = Time.time;
 			}
 
 			return;
 
 		} else if (agentState == AiMode.SearchingStorage) {
-
+			
 			agent.SetDestination (storageTransform.position);
 
 			if (!agent.pathPending) {
 				if (agent.remainingDistance <= agent.stoppingDistance) {
 					if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f) {
 
+						animator.SetBool ("Idle", true);
+						animator.SetBool ("Walk", false);
 						if (Time.time > lastWalkTime + searchWaitTime) {
 							playerInStorageRoom = playerObject.GetComponent<Player> ().playerInStorageRoom;
 
 							if (playerInStorageRoom) {
+								animator.SetBool ("Idle", false);
+								animator.SetBool ("Walk", true);
 								agentState = AiMode.Searching;
 							} else {
+								animator.SetBool ("Idle", false);
+								animator.SetBool ("Walk", true);
 								agentState = AiMode.SearchingMedRoom;
 							}
 
@@ -201,18 +206,26 @@ public class AgentAI : MonoBehaviour {
 			}
 
 		} else if (agentState == AiMode.SearchingMedRoom) {
+			animator.SetBool ("Idle", false);
+			animator.SetBool ("Walk", true);
 			agent.SetDestination (medRoomTransform.position);
 
 			if (!agent.pathPending) {
 				if (agent.remainingDistance <= agent.stoppingDistance) {
 					if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f) {
 
+						animator.SetBool ("Idle", true);
+						animator.SetBool ("Walk", false);
 						if (Time.time > lastWalkTime + searchWaitTime) {
 							playerInMedRoom = playerObject.GetComponent<Player> ().playerInMedRoom;
 
 							if (playerInMedRoom) {
+								animator.SetBool ("Idle", false);
+								animator.SetBool ("Walk", true);
 								agentState = AiMode.Searching;
 							} else {
+								animator.SetBool ("Idle", false);
+								animator.SetBool ("Walk", true);
 								agentState = AiMode.SearchingRecRoom;
 							}
 
@@ -222,18 +235,26 @@ public class AgentAI : MonoBehaviour {
 				}
 			}
 		} else if(agentState == AiMode.SearchingRecRoom) {
+			animator.SetBool ("Idle", false);
+			animator.SetBool ("Walk", true);
 			agent.SetDestination (recRoomTransform.position);
 
 			if (!agent.pathPending) {
 				if (agent.remainingDistance <= agent.stoppingDistance) {
 					if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f) {
 
+						animator.SetBool ("Idle", true);
+						animator.SetBool ("Walk", false);
 						if (Time.time > lastWalkTime + searchWaitTime) {
 							playerInRecRoom = playerObject.GetComponent<Player> ().playerInRecRoom;
 
 							if (playerInRecRoom) {
+								animator.SetBool ("Idle", false);
+								animator.SetBool ("Walk", true);
 								agentState = AiMode.Searching;
 							} else {
+								animator.SetBool ("Idle", false);
+								animator.SetBool ("Walk", true);
 								agentState = AiMode.SearchingBathroom;
 							}
 
@@ -243,18 +264,26 @@ public class AgentAI : MonoBehaviour {
 				}
 			}
 		} else if (agentState == AiMode.SearchingBathroom) {
+			animator.SetBool ("Idle", false);
+			animator.SetBool ("Walk", true);
 			agent.SetDestination (bathroomTransform.position);
 
 			if (!agent.pathPending) {
 				if (agent.remainingDistance <= agent.stoppingDistance) {
 					if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f) {
 
+						animator.SetBool ("Idle", true);
+						animator.SetBool ("Walk", false);
 						if (Time.time > lastWalkTime + searchWaitTime) {
 							playerInBathroom = playerObject.GetComponent<Player> ().playerInBathroom;
 
 							if (playerInBathroom) {
+								animator.SetBool ("Idle", false);
+								animator.SetBool ("Walk", true);
 								agentState = AiMode.Searching;
 							} else {
+								animator.SetBool ("Idle", false);
+								animator.SetBool ("Walk", true);
 								agentState = AiMode.Returning;
 								//Adjust Walk Wait Time to Speed up Enemy's searching
 							}
