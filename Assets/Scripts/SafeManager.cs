@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using VRTK.Examples;
 
 public class SafeManager : MonoBehaviour {
 
@@ -26,52 +27,42 @@ public class SafeManager : MonoBehaviour {
 	#endregion
 
 	#region Variables
+	public GameObject safeDoor;
+	public OpenableDoor oDoor;
 	public bool medRoomNumberEntered = false;
 	public bool bathRoomNumberEntered = false;
-	public bool recRoomNumberEntered = false;
 	public bool paintingNumberEntered = false;
 	#endregion
 
 	#region Methods
 	private void Update()
 	{
-		if (medRoomNumberEntered && bathRoomNumberEntered && recRoomNumberEntered && paintingNumberEntered) {
-			//open safe
+		if (medRoomNumberEntered && bathRoomNumberEntered && paintingNumberEntered) {
+			oDoor = safeDoor.GetComponent<OpenableDoor>();
+			oDoor.enabled = true;
 		}
 	}
 
 
 	#region Checks And Sets
-	public void MedroomComplete() {
+	public void MedRoomComplete() {
 		medRoomNumberEntered = true;
 	}
-	public void MedroomReset() {
+	public void MedRoomReset() {
 		medRoomNumberEntered = false;
 	}
-	public void BathroomComplete()
-	{
+	public void BathRoomComplete() {
 		bathRoomNumberEntered = true;
 	}
-	public void BathroomReset()
-	{
+	public void BathRoomReset() {
 		bathRoomNumberEntered = false;
 	}
-	public void RecroomComplete()
-	{
-		recRoomNumberEntered = true;
-	}
-	public void RecroomReset()
-	{
-		recRoomNumberEntered = false;
-	}
-	public void PaintingComplete()
-	{
+	public void PaintingPuzzleComplete() {
 		paintingNumberEntered = true;
 	}
-	public void PaintingReset()
-	{
+	public void PaintingReset() {
 		paintingNumberEntered = false;
 	}
-	# endregion
+	#endregion
 	#endregion
 }
