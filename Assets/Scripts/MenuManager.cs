@@ -6,12 +6,18 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour {
 	public static bool playMusic = true;
-	public static string level = "Master Level";
 
 	public Button begin;
 
 	public void Begin()
 	{
-		SceneManager.LoadScene(level);
+		SceneManager.LoadScene("Master Level");
 	}
+
+    void OnTriggerEnter(Collider collider) {
+        if (collider.tag == "PlayerTarget") {
+            SceneManager.LoadScene("Credits");
+        }
+        
+    }
 }

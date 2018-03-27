@@ -100,8 +100,16 @@ public class AgentAI : MonoBehaviour {
 						//Black out Player Screen and Reset SteamVR transform
 						playerTransform.parent.transform.position = new Vector3(16f, 0.5f, -10f);
 						playerInCell = true;
+                        playerInMedRoom = playerObject.GetComponent<Player>().playerInMedRoom;
+                        playerInStorageRoom = playerObject.GetComponent<Player>().playerInStorageRoom;
+                        playerInRecRoom = playerObject.GetComponent<Player>().playerInRecRoom;
+                        playerInBathroom = playerObject.GetComponent<Player>().playerInBathroom;
+                        playerInMedRoom = false;
+                        playerInStorageRoom = false;
+                        playerInRecRoom = false;
+                        playerInBathroom = false;
 
-						agentState = AiMode.Returning;
+                        agentState = AiMode.Returning;
 	
 					}
 				}
