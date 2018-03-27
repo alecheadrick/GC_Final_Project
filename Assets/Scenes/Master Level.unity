@@ -7883,7 +7883,7 @@ MonoBehaviour:
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 0
+  grabOverrideButton: 4
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 0}
@@ -9568,6 +9568,11 @@ Prefab:
         type: 2}
       propertyPath: m_Mass
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114505734579481982, guid: 1ddd1826c4f46cb429cdb0368a1410b9,
+        type: 2}
+      propertyPath: grabOverrideButton
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114717168248833362, guid: 1ddd1826c4f46cb429cdb0368a1410b9, type: 2}
@@ -12211,7 +12216,7 @@ MonoBehaviour:
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 0
+  grabOverrideButton: 4
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 0}
@@ -15070,7 +15075,7 @@ MonoBehaviour:
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 0
+  grabOverrideButton: 4
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 0}
@@ -15239,7 +15244,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &517375491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15275,7 +15280,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 38
+  m_RootOrder: 41
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &518577978
 GameObject:
@@ -16630,7 +16635,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &565241202
 GameObject:
@@ -17469,7 +17474,7 @@ Prefab:
     - target: {fileID: 224145211914417370, guid: a56e2becf026d0347a1faf6f7f2f1d8a,
         type: 2}
       propertyPath: m_RootOrder
-      value: 33
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 224145211914417370, guid: a56e2becf026d0347a1faf6f7f2f1d8a,
         type: 2}
@@ -17549,6 +17554,17 @@ Prefab:
         type: 2}
       propertyPath: m_LocalScale.y
       value: 0.30466518
+      objectReference: {fileID: 0}
+    - target: {fileID: 114532594145747132, guid: a56e2becf026d0347a1faf6f7f2f1d8a,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 2b1cdbcd1071d814c80e99d0130051dc,
+        type: 3}
+    - target: {fileID: 114532594145747132, guid: a56e2becf026d0347a1faf6f7f2f1d8a,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0.428
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a56e2becf026d0347a1faf6f7f2f1d8a, type: 2}
@@ -19101,17 +19117,17 @@ Prefab:
         type: 2}
       propertyPath: lightBulb.Array.data[0]
       value: 
-      objectReference: {fileID: 417557927}
+      objectReference: {fileID: 2053538349}
     - target: {fileID: 114234456522531634, guid: f139a48784039ea42a91e2fed1fc648e,
         type: 2}
       propertyPath: lightBulb.Array.data[1]
       value: 
-      objectReference: {fileID: 1300981508}
+      objectReference: {fileID: 887344043}
     - target: {fileID: 114234456522531634, guid: f139a48784039ea42a91e2fed1fc648e,
         type: 2}
       propertyPath: wallText
       value: 
-      objectReference: {fileID: 228952221}
+      objectReference: {fileID: 0}
     - target: {fileID: 1981976597190826, guid: f139a48784039ea42a91e2fed1fc648e, type: 2}
       propertyPath: m_Name
       value: OnboardingButton
@@ -21030,7 +21046,7 @@ MonoBehaviour:
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 0
+  grabOverrideButton: 4
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 0}
@@ -22023,7 +22039,7 @@ Transform:
   - {fileID: 643767892}
   - {fileID: 1277698096}
   m_Father: {fileID: 0}
-  m_RootOrder: 34
+  m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &737508371
 GameObject:
@@ -26186,7 +26202,7 @@ MonoBehaviour:
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 0
+  grabOverrideButton: 4
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 0}
@@ -26613,7 +26629,7 @@ Prefab:
     - target: {fileID: 224145211914417370, guid: a56e2becf026d0347a1faf6f7f2f1d8a,
         type: 2}
       propertyPath: m_RootOrder
-      value: 31
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 224145211914417370, guid: a56e2becf026d0347a1faf6f7f2f1d8a,
         type: 2}
@@ -26693,6 +26709,17 @@ Prefab:
         type: 2}
       propertyPath: m_LocalScale.y
       value: 0.30466518
+      objectReference: {fileID: 0}
+    - target: {fileID: 114532594145747132, guid: a56e2becf026d0347a1faf6f7f2f1d8a,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 2b1cdbcd1071d814c80e99d0130051dc,
+        type: 3}
+    - target: {fileID: 114532594145747132, guid: a56e2becf026d0347a1faf6f7f2f1d8a,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0.428
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a56e2becf026d0347a1faf6f7f2f1d8a, type: 2}
@@ -28250,35 +28277,35 @@ Transform:
 --- !u!114 &965490897
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114769464586743112, guid: d6538d20c661d9f449fa5d4f07ade507,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 965490895}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de0c455dd96dc6d42a39ffe84e76282b, type: 3}
+  m_Script: {fileID: 11500000, guid: 2537ae21b6fac8a4b9ce963ed97b2894, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultEvents:
-    OnValueChanged:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: VRTK.VRTK_Control+ValueChangedEvent, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-  interactWithoutGrab: 0
-  direction: 0
-  door: {fileID: 965490895}
-  handles: {fileID: 1141545878}
-  frame: {fileID: 0}
-  content: {fileID: 0}
-  hideContent: 1
-  maxAngle: 110
-  openInward: 0
-  openOutward: 1
-  minSnapClose: 0.15
-  releasedFriction: 10
-  grabbedFriction: 100
-  handleInteractableOnly: 1
+  disableWhenIdle: 0
+  touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
+  allowedTouchControllers: 0
+  ignoredColliders: []
+  isGrabbable: 0
+  holdButtonToGrab: 1
+  stayGrabbedOnTeleport: 1
+  validDrop: 1
+  grabOverrideButton: 0
+  allowedGrabControllers: 0
+  grabAttachMechanicScript: {fileID: 0}
+  secondaryGrabActionScript: {fileID: 0}
+  isUsable: 1
+  holdButtonToUse: 1
+  useOnlyIfGrabbed: 0
+  pointerActivatesUseAction: 0
+  useOverrideButton: 0
+  allowedUseControllers: 0
+  usingState: 0
+  flipped: 0
+  rotated: 0
 --- !u!65 &965490898
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33633,7 +33660,7 @@ MonoBehaviour:
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 0
+  grabOverrideButton: 4
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 0}
@@ -33969,7 +33996,7 @@ MonoBehaviour:
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 0
+  grabOverrideButton: 4
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 0}
@@ -35438,7 +35465,7 @@ Transform:
   - {fileID: 1496701168}
   - {fileID: 104782374}
   m_Father: {fileID: 0}
-  m_RootOrder: 37
+  m_RootOrder: 40
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1241545332
 GameObject:
@@ -37812,7 +37839,7 @@ MonoBehaviour:
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 0
+  grabOverrideButton: 4
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 0}
@@ -37872,7 +37899,7 @@ MonoBehaviour:
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 0
+  grabOverrideButton: 4
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 0}
@@ -37960,7 +37987,7 @@ MonoBehaviour:
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 0
+  grabOverrideButton: 4
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 0}
@@ -38048,7 +38075,7 @@ MonoBehaviour:
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 0
+  grabOverrideButton: 4
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 0}
@@ -38136,7 +38163,7 @@ MonoBehaviour:
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 0
+  grabOverrideButton: 4
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 0}
@@ -38224,7 +38251,7 @@ MonoBehaviour:
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 0
+  grabOverrideButton: 4
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 0}
@@ -38312,7 +38339,7 @@ MonoBehaviour:
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 0
+  grabOverrideButton: 4
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 0}
@@ -38400,7 +38427,7 @@ MonoBehaviour:
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 0
+  grabOverrideButton: 4
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 0}
@@ -38488,7 +38515,7 @@ MonoBehaviour:
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 0
+  grabOverrideButton: 4
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 0}
@@ -38576,7 +38603,7 @@ MonoBehaviour:
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 0
+  grabOverrideButton: 4
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 0}
@@ -38664,7 +38691,7 @@ MonoBehaviour:
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 0
+  grabOverrideButton: 4
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 0}
@@ -38752,7 +38779,7 @@ MonoBehaviour:
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 0
+  grabOverrideButton: 4
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 0}
@@ -38840,7 +38867,7 @@ MonoBehaviour:
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 0
+  grabOverrideButton: 4
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 0}
@@ -38928,7 +38955,7 @@ MonoBehaviour:
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 0
+  grabOverrideButton: 4
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 0}
@@ -39016,7 +39043,7 @@ MonoBehaviour:
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 0
+  grabOverrideButton: 4
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 0}
@@ -39104,7 +39131,7 @@ MonoBehaviour:
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 0
+  grabOverrideButton: 4
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 0}
@@ -39192,7 +39219,7 @@ MonoBehaviour:
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 0
+  grabOverrideButton: 4
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 0}
@@ -39280,7 +39307,7 @@ MonoBehaviour:
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 0
+  grabOverrideButton: 4
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 0}
@@ -39368,7 +39395,7 @@ MonoBehaviour:
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 0
+  grabOverrideButton: 4
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 0}
@@ -39456,7 +39483,7 @@ MonoBehaviour:
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 0
+  grabOverrideButton: 4
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 0}
@@ -39544,7 +39571,7 @@ MonoBehaviour:
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 0
+  grabOverrideButton: 4
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 0}
@@ -39632,7 +39659,7 @@ MonoBehaviour:
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 0
+  grabOverrideButton: 4
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 0}
@@ -39720,7 +39747,7 @@ MonoBehaviour:
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 0
+  grabOverrideButton: 4
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 0}
@@ -39808,7 +39835,7 @@ MonoBehaviour:
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 0
+  grabOverrideButton: 4
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 0}
@@ -39896,7 +39923,7 @@ MonoBehaviour:
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 0
+  grabOverrideButton: 4
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 0}
@@ -39997,7 +40024,7 @@ MonoBehaviour:
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 0
+  grabOverrideButton: 4
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 0}
@@ -40098,7 +40125,7 @@ MonoBehaviour:
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 0
+  grabOverrideButton: 4
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 0}
@@ -40199,7 +40226,7 @@ MonoBehaviour:
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 0
+  grabOverrideButton: 4
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 0}
@@ -40300,7 +40327,7 @@ MonoBehaviour:
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 0
+  grabOverrideButton: 4
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 0}
@@ -40401,7 +40428,7 @@ MonoBehaviour:
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 0
+  grabOverrideButton: 4
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 0}
@@ -40489,7 +40516,7 @@ MonoBehaviour:
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 0
+  grabOverrideButton: 4
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 0}
@@ -40590,7 +40617,7 @@ MonoBehaviour:
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 0
+  grabOverrideButton: 4
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 0}
@@ -40952,7 +40979,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4902339349623270, guid: f139a48784039ea42a91e2fed1fc648e, type: 2}
       propertyPath: m_RootOrder
-      value: 28
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 114234456522531634, guid: f139a48784039ea42a91e2fed1fc648e,
         type: 2}
@@ -41291,7 +41318,7 @@ Transform:
   - {fileID: 508951499}
   - {fileID: 1622850433}
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1293877508
 GameObject:
@@ -42261,7 +42288,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4405586427890220, guid: 26d29fb33fd038f4fbe1109fb2d210f8, type: 2}
       propertyPath: m_RootOrder
-      value: 23
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 114135579150150602, guid: 26d29fb33fd038f4fbe1109fb2d210f8,
         type: 2}
@@ -45053,6 +45080,64 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1423065189}
   m_Mesh: {fileID: 4300000, guid: 8fecc8322ed69604e86a6cf73dbfd489, type: 3}
+--- !u!1 &1426433299
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1426433301}
+  - component: {fileID: 1426433300}
+  - component: {fileID: 1426433302}
+  m_Layer: 0
+  m_Name: dropKeyAtTopDoor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1426433300
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1426433299}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.28274536, y: 0.2983098, z: 0.32192612}
+  m_Center: {x: -0.0031852722, y: 0.01002574, z: -0.05391693}
+--- !u!4 &1426433301
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1426433299}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 17.4748, y: 4.235, z: 19.249}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1426433302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1426433299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 220fd45f25f1131428efe72d481a2537, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: {fileID: 1964665267}
+  dropPlace: {fileID: 1992675593}
+  door: {fileID: 2098505646}
+  endTrigger: {fileID: 517375490}
+  keyInDropZone: 0
 --- !u!1 &1428334951
 GameObject:
   m_ObjectHideFlags: 0
@@ -47069,7 +47154,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4902339349623270, guid: f139a48784039ea42a91e2fed1fc648e, type: 2}
       propertyPath: m_RootOrder
-      value: 30
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 114234456522531634, guid: f139a48784039ea42a91e2fed1fc648e,
         type: 2}
@@ -50571,35 +50656,35 @@ Transform:
 --- !u!114 &1606084932
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114665099329839654, guid: d6538d20c661d9f449fa5d4f07ade507,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1606084930}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de0c455dd96dc6d42a39ffe84e76282b, type: 3}
+  m_Script: {fileID: 11500000, guid: 2537ae21b6fac8a4b9ce963ed97b2894, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultEvents:
-    OnValueChanged:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: VRTK.VRTK_Control+ValueChangedEvent, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-  interactWithoutGrab: 0
-  direction: 0
-  door: {fileID: 1606084930}
-  handles: {fileID: 40557803}
-  frame: {fileID: 0}
-  content: {fileID: 0}
-  hideContent: 1
-  maxAngle: 110
-  openInward: 0
-  openOutward: 1
-  minSnapClose: 0.15
-  releasedFriction: 10
-  grabbedFriction: 100
-  handleInteractableOnly: 1
+  disableWhenIdle: 0
+  touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
+  allowedTouchControllers: 0
+  ignoredColliders: []
+  isGrabbable: 0
+  holdButtonToGrab: 1
+  stayGrabbedOnTeleport: 1
+  validDrop: 1
+  grabOverrideButton: 0
+  allowedGrabControllers: 0
+  grabAttachMechanicScript: {fileID: 0}
+  secondaryGrabActionScript: {fileID: 0}
+  isUsable: 1
+  holdButtonToUse: 1
+  useOnlyIfGrabbed: 0
+  pointerActivatesUseAction: 0
+  useOverrideButton: 0
+  allowedUseControllers: 0
+  usingState: 0
+  flipped: 0
+  rotated: 0
 --- !u!65 &1606084933
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -52283,7 +52368,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &1681195232
 Light:
   m_ObjectHideFlags: 0
@@ -53745,7 +53830,7 @@ Transform:
   - {fileID: 79888999}
   - {fileID: 53667120}
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1744533944
 GameObject:
@@ -56774,7 +56859,7 @@ Transform:
   - {fileID: 34188503}
   - {fileID: 991614428}
   m_Father: {fileID: 0}
-  m_RootOrder: 35
+  m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1860659299
 GameObject:
@@ -57393,7 +57478,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4902339349623270, guid: f139a48784039ea42a91e2fed1fc648e, type: 2}
       propertyPath: m_RootOrder
-      value: 29
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 114234456522531634, guid: f139a48784039ea42a91e2fed1fc648e,
         type: 2}
@@ -57594,7 +57679,7 @@ Prefab:
     - target: {fileID: 224145211914417370, guid: a56e2becf026d0347a1faf6f7f2f1d8a,
         type: 2}
       propertyPath: m_RootOrder
-      value: 32
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 224145211914417370, guid: a56e2becf026d0347a1faf6f7f2f1d8a,
         type: 2}
@@ -57674,6 +57759,17 @@ Prefab:
         type: 2}
       propertyPath: m_LocalScale.y
       value: 0.30466518
+      objectReference: {fileID: 0}
+    - target: {fileID: 114532594145747132, guid: a56e2becf026d0347a1faf6f7f2f1d8a,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 2b1cdbcd1071d814c80e99d0130051dc,
+        type: 3}
+    - target: {fileID: 114532594145747132, guid: a56e2becf026d0347a1faf6f7f2f1d8a,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0.428
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a56e2becf026d0347a1faf6f7f2f1d8a, type: 2}
@@ -58118,7 +58214,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1902818632
 GameObject:
@@ -59630,6 +59726,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1964665266
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4204229101771082, guid: c93091cc8c0a6f84cb85bdee27a7acac, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 17.4639
+      objectReference: {fileID: 0}
+    - target: {fileID: 4204229101771082, guid: c93091cc8c0a6f84cb85bdee27a7acac, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 4.2251
+      objectReference: {fileID: 0}
+    - target: {fileID: 4204229101771082, guid: c93091cc8c0a6f84cb85bdee27a7acac, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 19.2499
+      objectReference: {fileID: 0}
+    - target: {fileID: 4204229101771082, guid: c93091cc8c0a6f84cb85bdee27a7acac, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0.32635656
+      objectReference: {fileID: 0}
+    - target: {fileID: 4204229101771082, guid: c93091cc8c0a6f84cb85bdee27a7acac, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.50246257
+      objectReference: {fileID: 0}
+    - target: {fileID: 4204229101771082, guid: c93091cc8c0a6f84cb85bdee27a7acac, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.44591963
+      objectReference: {fileID: 0}
+    - target: {fileID: 4204229101771082, guid: c93091cc8c0a6f84cb85bdee27a7acac, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.66496503
+      objectReference: {fileID: 0}
+    - target: {fileID: 4204229101771082, guid: c93091cc8c0a6f84cb85bdee27a7acac, type: 2}
+      propertyPath: m_RootOrder
+      value: 25
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: c93091cc8c0a6f84cb85bdee27a7acac, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1 &1964665267 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1051123193521872, guid: c93091cc8c0a6f84cb85bdee27a7acac,
+    type: 2}
+  m_PrefabInternal: {fileID: 1964665266}
 --- !u!1 &1965614741
 GameObject:
   m_ObjectHideFlags: 0
@@ -60270,6 +60413,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1987277338}
   m_Mesh: {fileID: 4300000, guid: b224b9ad8b0d5a34ebb277b1ac6c081e, type: 3}
+--- !u!1 &1992675592
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1992675593}
+  m_Layer: 0
+  m_Name: KeyInLockTransform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1992675593
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1992675592}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 17.4639, y: 4.2251, z: 19.2499}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 24
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1994528917
 GameObject:
   m_ObjectHideFlags: 0
@@ -60614,6 +60785,11 @@ Prefab:
     - target: {fileID: 4170892521447894, guid: 1ddd1826c4f46cb429cdb0368a1410b9, type: 2}
       propertyPath: m_RootOrder
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114505734579481982, guid: 1ddd1826c4f46cb429cdb0368a1410b9,
+        type: 2}
+      propertyPath: grabOverrideButton
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114717168248833362, guid: 1ddd1826c4f46cb429cdb0368a1410b9, type: 2}
@@ -62288,7 +62464,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4170892521447894, guid: 1ddd1826c4f46cb429cdb0368a1410b9, type: 2}
       propertyPath: m_RootOrder
-      value: 36
+      value: 39
       objectReference: {fileID: 0}
     - target: {fileID: 1641736591996392, guid: 1ddd1826c4f46cb429cdb0368a1410b9, type: 2}
       propertyPath: m_Name
@@ -62302,6 +62478,11 @@ Prefab:
         type: 2}
       propertyPath: m_Text
       value: The painting holds a secret
+      objectReference: {fileID: 0}
+    - target: {fileID: 114505734579481982, guid: 1ddd1826c4f46cb429cdb0368a1410b9,
+        type: 2}
+      propertyPath: grabOverrideButton
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114717168248833362, guid: 1ddd1826c4f46cb429cdb0368a1410b9, type: 2}
@@ -63072,7 +63253,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2098505646}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2537ae21b6fac8a4b9ce963ed97b2894, type: 3}
   m_Name: 
@@ -63750,6 +63931,21 @@ Prefab:
     - target: {fileID: 4944326181622640, guid: 11a2c3ff86cfa4f43bd41a4b48e56bf5, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -13.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 114678139149071178, guid: 11a2c3ff86cfa4f43bd41a4b48e56bf5,
+        type: 2}
+      propertyPath: touchHighlightColor.r
+      value: 0.9862069
+      objectReference: {fileID: 0}
+    - target: {fileID: 114678139149071178, guid: 11a2c3ff86cfa4f43bd41a4b48e56bf5,
+        type: 2}
+      propertyPath: touchHighlightColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114678139149071178, guid: 11a2c3ff86cfa4f43bd41a4b48e56bf5,
+        type: 2}
+      propertyPath: holdButtonToUse
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 11a2c3ff86cfa4f43bd41a4b48e56bf5, type: 2}
