@@ -4,7 +4,7 @@
     using UnityEventHelper;
     using UnityEngine.UI;
 
-    public class PaintingPuzzleButton : MonoBehaviour
+    public class MedPuzzleButton : MonoBehaviour
     {
         public Text numberText;
         public int currentNumber = 0;
@@ -30,11 +30,11 @@
             numberText.text = ("" + currentNumber);
             if (currentNumber == correctNumber)
             {
-                SafeManager.instance.PaintingPuzzleComplete();
+                SafeManager.instance.MedRoomComplete();
             }
             else if (currentNumber != correctNumber)
             {
-                SafeManager.instance.PaintingReset();
+                SafeManager.instance.MedRoomReset();
             }
         }
         private void handlePush(object sender, Control3DEventArgs e)
