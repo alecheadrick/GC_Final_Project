@@ -69,7 +69,7 @@ public class AgentAI : MonoBehaviour {
 		GameObject medRoom = GameObject.FindGameObjectWithTag ("MedRoom");
 		medRoomTransform = medRoom.GetComponent<Transform> ();
 
-		agentState = AiMode.Walking;
+		agentState = AiMode.WaitingToWalk;
 	}
 
 	// Update is called once per frame

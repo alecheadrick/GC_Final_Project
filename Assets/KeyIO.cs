@@ -10,6 +10,7 @@
 		#region Methods
 		public override void Ungrabbed(VRTK_InteractGrab previousGrabbingObject)
 		{
+            Debug.Log("Ungrab occurs");
 			if (DropKeyIntoPlace.instance.keyInDropZone == true)
 			{
 				DropKeyIntoPlace.instance.DropIntoPlace();

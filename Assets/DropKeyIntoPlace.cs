@@ -49,11 +49,14 @@ public class DropKeyIntoPlace : MonoBehaviour {
 		}
 	}
 	public void DropIntoPlace() {
-			key.transform.position = dropPlace.position;
-			key.GetComponent<KeyIO>().enabled = false;
-			key.GetComponent<Collider>().enabled = false;
-			door.GetComponent<Openable_Door>().enabled = true;
-			endTrigger.SetActive(true);
+        key.GetComponent<Rigidbody>().isKinematic = true;
+        key.GetComponent<Rigidbody>().useGravity = false;
+        key.transform.position = dropPlace.position;
+        key.transform.rotation = dropPlace.rotation;
+		key.GetComponent<KeyIO>().enabled = false;
+		key.GetComponent<Collider>().enabled = false;
+		door.GetComponent<Openable_Door>().enabled = true;
+		endTrigger.SetActive(true);
 	}
 
 	#endregion
