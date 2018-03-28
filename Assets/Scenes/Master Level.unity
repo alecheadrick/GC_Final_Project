@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 112000702, guid: 5d89f26fab86e054e82eaf7d8b1c2197,
+  m_LightingDataAsset: {fileID: 112000946, guid: 5d89f26fab86e054e82eaf7d8b1c2197,
     type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -463,7 +463,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 12230255}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.24, y: 3.78, z: 18.68}
+  m_LocalPosition: {x: 16.93, y: 3.78, z: 21.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1743215074}
@@ -42634,15 +42634,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4405586427890220, guid: 26d29fb33fd038f4fbe1109fb2d210f8, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 16.51
+      value: 16.88
       objectReference: {fileID: 0}
     - target: {fileID: 4405586427890220, guid: 26d29fb33fd038f4fbe1109fb2d210f8, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 3.09
       objectReference: {fileID: 0}
     - target: {fileID: 4405586427890220, guid: 26d29fb33fd038f4fbe1109fb2d210f8, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 9.92
+      value: 21.34
       objectReference: {fileID: 0}
     - target: {fileID: 4405586427890220, guid: 26d29fb33fd038f4fbe1109fb2d210f8, type: 2}
       propertyPath: m_LocalRotation.x
@@ -42709,12 +42709,12 @@ Prefab:
     - target: {fileID: 114135579150150602, guid: 26d29fb33fd038f4fbe1109fb2d210f8,
         type: 2}
       propertyPath: walkWaitTime
-      value: 180
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 114135579150150602, guid: 26d29fb33fd038f4fbe1109fb2d210f8,
         type: 2}
       propertyPath: agentState
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 26d29fb33fd038f4fbe1109fb2d210f8, type: 2}
@@ -46931,7 +46931,7 @@ Prefab:
     - target: {fileID: 114452520133506176, guid: 8c1ef7fd632827e40ba070c9e550d48d,
         type: 2}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8c1ef7fd632827e40ba070c9e550d48d, type: 2}
